@@ -7,6 +7,7 @@ import com.microsoft.azure.storage.*;
 import com.microsoft.azure.storage.blob.*;
 
 public class Mail2Ccloud {
+	//azure Connection String 
 	public static final String storageConnectionString =
 		"DefaultEndpointsProtocol=https;"
 		+ "AccountName=4900acit;"
