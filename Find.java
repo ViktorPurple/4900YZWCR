@@ -1,8 +1,3 @@
-/**
-4900 JDVYH project
-**/
-
-
 import java.io.*;
 import java.nio.file.*;
 import java.nio.file.attribute.*;
