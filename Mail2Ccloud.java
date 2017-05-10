@@ -5,7 +5,7 @@ import java.nio.file.attribute.*;
 
 import com.microsoft.azure.storage.*;
 import com.microsoft.azure.storage.blob.*;
-
+//test comment for github
 public class Mail2Ccloud {
 	//azure Connection String 
 	public static final String storageConnectionString =
