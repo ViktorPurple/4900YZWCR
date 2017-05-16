@@ -12,9 +12,23 @@ public class Mail2Ccloud {
 		"DefaultEndpointsProtocol=https;"
 		+ "AccountName=4900acit;"
 		+ "AccountKey=OOUURGmvIirdpYkTA3P3miBph/PawGnAvIPb65C/pgBEBqSpYtHJpQAh1UEzL2v5mmpw/NKCtEz8W1+JNE/u/w==";
+		
+	public static final String storageConnectionSAS = 
 
+		"BlobEndpoint=https://fc6961f961d34f8792b1089.blob.core.windows.net;"
+		+"SharedAccessSignature=sv=2012-02-12&amp;si=IngestionSasForAzCopy201705101812566224&amp;sig=l9d0sSHUGbszgHB4BFPG8ei8%2FtaGA2Fb5R%2FgM9SA1nY%3D";
+	
+		
 	public static void main(String[] args) {
+		
+		
 		try {
+					
+			
+			TransferTo365 transfer = new TransferTo365();
+			transfer.delJournal();
+			transfer.transferItScript();
+		
 			CloudStorageAccount account = CloudStorageAccount.parse(storageConnectionString);
             CloudBlobClient serviceClient = account.createCloudBlobClient();
 
@@ -39,9 +53,6 @@ public class Mail2Ccloud {
 				blob.upload(new FileInputStream(sourceFile), sourceFile.length());				
 			}
 			
-            CloudBlockBlob blob = container.getBlockBlobReference("danisblop.jpg");
-            File sourceFile = new File("c:\\myimages\\danisblop.jpg");
-            blob.upload(new FileInputStream(sourceFile), sourceFile.length());
 
 			//downlading same file.
             // Download the image file. uncoment if need
@@ -65,4 +76,7 @@ public class Mail2Ccloud {
             System.exit(-1);
         }
 	}
+	
+	
+	
 }
