@@ -9,18 +9,18 @@ import com.microsoft.azure.storage.blob.*;
 public class Mail2Ccloud {
 	//azure Connection String 
 	public static final String storageConnectionString =
-		"DefaultEndpointsProtocol=https;"
-		+ "AccountName=4900acit;"
-		+ "AccountKey=OOUURGmvIirdpYkTA3P3miBph/PawGnAvIPb65C/pgBEBqSpYtHJpQAh1UEzL2v5mmpw/NKCtEz8W1+JNE/u/w==";
+	"DefaultEndpointsProtocol=https;"
+	+ "AccountName=4900acit;"
+	+ "AccountKey=OOUURGmvIirdpYkTA3P3miBph/PawGnAvIPb65C/pgBEBqSpYtHJpQAh1UEzL2v5mmpw/NKCtEz8W1+JNE/u/w==";
 
 	public static void main(String[] args) {
 		try {
 			CloudStorageAccount account = CloudStorageAccount.parse(storageConnectionString);
-            CloudBlobClient serviceClient = account.createCloudBlobClient();
+			CloudBlobClient serviceClient = account.createCloudBlobClient();
 
             // Container name must be lower case.
-            CloudBlobContainer container = serviceClient.getContainerReference("danisblop");
-            container.createIfNotExists();
+			CloudBlobContainer container = serviceClient.getContainerReference("danisblop");
+			container.createIfNotExists();
 
 			ArrayList<Path> fileNames = new ArrayList<Path>();
 			
@@ -39,30 +39,21 @@ public class Mail2Ccloud {
 				blob.upload(new FileInputStream(sourceFile), sourceFile.length());				
 			}
 			
-            CloudBlockBlob blob = container.getBlockBlobReference("danisblop.jpg");
-            File sourceFile = new File("c:\\myimages\\danisblop.jpg");
-            blob.upload(new FileInputStream(sourceFile), sourceFile.length());
-
-			//downlading same file.
-            // Download the image file. uncoment if need
-			
-			//File destinationFile = new File(sourceFile.getParentFile(), "image1Download.tmp");
-			//blob.downloadToFile(destinationFile.getAbsolutePath());
-        }
-        catch (FileNotFoundException fileNotFoundException) {
-            System.out.print("FileNotFoundException encountered: ");
-            System.out.println(fileNotFoundException.getMessage());
-            System.exit(-1);
-        }
-        catch (StorageException storageException) {
-            System.out.print("StorageException encountered: ");
-            System.out.println(storageException.getMessage());
-            System.exit(-1);
-        }
-        catch (Exception e) {
-            System.out.print("Exception encountered: ");
-            System.out.println(e.getMessage());
-            System.exit(-1);
-        }
+		}
+		catch (FileNotFoundException fileNotFoundException) {
+			System.out.print("FileNotFoundException encountered: ");
+			System.out.println(fileNotFoundException.getMessage());
+			System.exit(-1);
+		}
+		catch (StorageException storageException) {
+			System.out.print("StorageException encountered: ");
+			System.out.println(storageException.getMessage());
+			System.exit(-1);
+		}
+		catch (Exception e) {
+			System.out.print("Exception encountered: ");
+			System.out.println(e.getMessage());
+			System.exit(-1);
+		}
 	}
 }
