@@ -1,0 +1,2 @@
+Workload,FilePath,Name,Mailbox,IsArchive,TargetRootFolder,SPFileContainer,SPManifestContainer,SPSiteUrl
+Exchange,https://fc6961f961d34f8792b1089.blob.core.windows.net/ingestiondata,anatoliy_sorockin_yandex_ru.pst,superuser@acit4900.onmicrosoft.com,FALSE,/,,,

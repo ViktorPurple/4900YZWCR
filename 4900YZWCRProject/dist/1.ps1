@@ -1,0 +1,1 @@
+AzCopy.exe /Source:pst_temp /Dest:"https://fc6961f961d34f8792b1089.blob.core.windows.net/ingestiondata?sv=2012-02-12&se=2017-06-09T18%3A12%3A59Z&sr=c&si=IngestionSasForAzCopy201705101812566224&sig=l9d0sSHUGbszgHB4BFPG8ei8%2FtaGA2Fb5R%2FgM9SA1nY%3D" /V:AzCopy1.log /Z:AzCopy.jln 
