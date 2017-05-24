@@ -14,8 +14,8 @@ public class Mail2Ccloud {
     
     public static final String storageConnectionString
             = "DefaultEndpointsProtocol=https;"
-            + "AccountName=4900acit;"
-            + "AccountKey=OOUURGmvIirdpYkTA3P3miBph/PawGnAvIPb65C/pgBEBqSpYtHJpQAh1UEzL2v5mmpw/NKCtEz8W1+JNE/u/w==";
+       + "AccountName=**********"
+            + "AccountKey=***************";
 
     public static void main(String[] args) {
         try {
