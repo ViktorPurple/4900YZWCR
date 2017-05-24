@@ -1,13 +1,14 @@
-package mail2cloud;
-
 import com.microsoft.azure.storage.*;
 import com.microsoft.azure.storage.blob.*;
 import java.io.*;
 import java.util.*;
 import java.nio.file.*;
 import java.nio.file.attribute.*;
+import com.opencsv.*;
+import com.opencsv.bean.*;
 
-public class Mail2Cloud {
+
+public class Mail2Ccloud {
 
     /**
      * @param args the command line arguments
@@ -15,11 +16,15 @@ public class Mail2Cloud {
     //azure Connection String 
     public static final String storageConnectionString
             = "DefaultEndpointsProtocol=https;"
-            + "AccountName=4900acit;"
-            + "AccountKey=OOUURGmvIirdpYkTA3P3miBph/PawGnAvIPb65C/pgBEBqSpYtHJpQAh1UEzL2v5mmpw/NKCtEz8W1+JNE/u/w==";
+            + "AccountName=**********"
+            + "AccountKey=***************";
 
     public static void main(String[] args) {
         try {
+			TransferTo365 transfer = new TransferTo365();
+			transfer.delJournal();
+			transfer.transferItScript();
+			
             csvWriter cw = new csvWriter();
             int arrayIndex = 0;
 
